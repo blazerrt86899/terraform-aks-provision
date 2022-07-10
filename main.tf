@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "test" {
-  name     = "test-resources"
+  name     = "aks-rg"
   location = "East US"
 }
 
 resource "azurerm_kubernetes_cluster" "test" {
-  name                = "test-aks1"
+  name                = "aks-kube"
   location            = azurerm_resource_group.test.location
   resource_group_name = azurerm_resource_group.test.name
   dns_prefix          = "testaks1"
